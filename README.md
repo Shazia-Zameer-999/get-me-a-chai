@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Get Me a Chai! - Crowdfunding for Creators
 
-## Getting Started
+## Project Description
 
-First, run the development server:
+Get me a Chai is a crowdfunding platform currently in development. It is designed to help creators, developers, and artists receive financial support and donations from their fans and followers. Users can visit a creator's public page and make small, one-time payments to support their work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### About Us
+We are building a simple and accessible platform to empower creators by connecting them with their supporters through small, meaningful contributions.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Contact Us
+For any inquiries, please contact us at: **your.email@example.com**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Pricing
+The platform is free for creators to join. A small platform fee (e.g., 5%) will be deducted from each transaction to cover payment processing and operational costs.
 
-## Learn More
+### Terms & Conditions
+- All users must be over 18 years of age.
+- Funds raised on the platform are the responsibility of the creator.
+- We act as an intermediary platform to facilitate payments.
 
-To learn more about Next.js, take a look at the following resources:
+### Privacy Policy
+- We collect user email addresses and names for account creation and communication purposes.
+- We do not store any sensitive payment information like credit card numbers. All payment processing is handled securely by our payment partner, Razorpay.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Cancellation & Refund Policy
+All payments made on the "Get me a Chai" platform are considered voluntary donations and are final. Therefore, we do not offer any cancellations or refunds once a payment is made.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
