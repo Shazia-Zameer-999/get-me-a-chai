@@ -1,7 +1,7 @@
 "use client" 
 import React from 'react';
 import Link from 'next/link';
-import { FaTwitter, FaInstagram, FaFacebook, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaFacebook, FaGithub ,FaLinkedin} from 'react-icons/fa';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -51,8 +51,11 @@ const Footer = () => {
                             <a href="#" aria-label="Facebook" className="text-slate-300 hover:text-blue-400 transition-colors">
                                 <FaFacebook size={24} />
                             </a>
-                            <a href="#" aria-label="Github" className="text-slate-300 hover:text-blue-400 transition-colors">
+                            <a href="https://github.com/Shazia-Zameer-999/get-me-a-chai/tree/main" aria-label="Github" className="text-slate-300 hover:text-blue-400 transition-colors">
                                 <FaGithub size={24} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/daten-diva-903014332/" aria-label="LinkedIn" className="text-slate-300 hover:text-blue-400 transition-colors">
+                                <FaLinkedin size={24} />
                             </a>
                         </div>
                     </div>
