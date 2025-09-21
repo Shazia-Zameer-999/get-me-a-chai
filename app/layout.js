@@ -23,12 +23,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 bg-[radial-gradient(ellipse_50%_50%_at_90%_10%,_rgba(126,34,206,0.15),_transparent_60%),radial-gradient(ellipse_50%_50%_at_10%_90%,_rgba(30,64,175,0.15),_transparent_60%)]`}
       >
         <SessionWrapper>
 
           <Navbar />
-          <div className="min-h-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] text-white mt-16 ">
+          <div className="min-h-screen bg-gray-950 bg-[radial-gradient(ellipse_50%_50%_at_90%_10%,_rgba(126,34,206,0.15),_transparent_60%),radial-gradient(ellipse_50%_50%_at_10%_90%,_rgba(30,64,175,0.15),_transparent_60%)] text-white mt-16 ">
 
             {children}
           </div>

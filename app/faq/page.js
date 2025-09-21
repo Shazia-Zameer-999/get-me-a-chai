@@ -1,12 +1,12 @@
 import React from 'react'
-import Dashboard from '@/components/Dashboard'
+import FaqPage from '@/components/Faq'
 export const metadata = {
-    title: "Dashboard - Get me a Chai",
-};
+    title: "FAQ - Get me a Chai",
+}
 const page = () => {
     return (
         <div>
-            <Dashboard />
+            <FaqPage />
         </div>
     )
 }
