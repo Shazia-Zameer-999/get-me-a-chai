@@ -153,26 +153,69 @@ export default function Home() {
         <p className="text-center text-slate-500 text-sm mt-8">*Standard payment processor fees still apply.</p>
       </div>
 
-      <div className="text-white container mx-auto py-20 px-4 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Learn More About Us</h2>
-        <motion.div
-          className="w-full max-w-4xl aspect-video rounded-xl overflow-hidden shadow-2xl shadow-purple-900/20 border border-slate-800"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-        >
-          <section className="about-section text-center py-12 bg-[#0e172b] text-gray-200">
-            <h2 className="text-4xl font-semibold mb-6">Learn More About Us</h2>
+      <div className="text-white container mx-auto py-24 px-6 flex flex-col items-center text-center">
+  {/* Title */}
+  <motion.h2
+    className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-pink-400 bg-clip-text text-transparent"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    Learn More About Get Me a Chai ☕
+  </motion.h2>
 
-            <p className="max-w-2xl mx-auto text-lg text-gray-400 leading-relaxed">
-              BitLinks is a powerful and intuitive URL shortener that helps you manage and track your links with ease.
-              Built with <span className="text-purple-400 font-medium">Next.js</span> and <span className="text-purple-400 font-medium">MongoDB</span>,
-              it offers real-time analytics, user authentication, and a beautiful, responsive interface.
-            </p>
-          </section>
-        </motion.div>
-      </div>
+  {/* Project Info Card */}
+  <motion.div
+    className="w-full max-w-3xl bg-gradient-to-b from-[#141e33] to-[#0e172b] rounded-2xl border border-amber-500/20 p-8 shadow-2xl shadow-amber-900/30"
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true, amount: 0.5 }}
+    transition={{ duration: 0.6 }}
+  >
+    <p className="text-gray-300 text-lg leading-relaxed mb-6">
+      <span className="text-amber-400 font-semibold">Get Me a Chai</span> is a full-stack
+      crowdfunding platform inspired by <span className="text-amber-400 font-medium">Patreon</span>,
+      built with <span className="text-amber-400 font-medium">Next.js (App Router)</span> and
+      <span className="text-amber-400 font-medium"> MongoDB</span>. It allows creators to showcase
+      their work, while supporters can easily send monetary appreciation — one chai at a time ☕.
+    </p>
+
+    <p className="text-gray-400 text-base leading-relaxed">
+      The platform integrates secure payments using <span className="text-amber-400 font-medium">Razorpay</span>,
+      features personalized creator pages, authentication, and a beautiful, minimal interface.
+      It’s designed to empower creators to connect directly with their audience and monetize
+      their creativity seamlessly. The UI focuses on smooth user experience with clean design
+      and fluid transitions powered by <span className="text-amber-400 font-medium">Framer Motion</span>.
+    </p>
+  </motion.div>
+
+  {/* Tech Stack */}
+  <motion.div
+    className="flex flex-wrap justify-center gap-3 mt-10"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.3, duration: 0.6 }}
+  >
+    {[
+      "Next.js (App Router)",
+      "React",
+      "MongoDB",
+      "Razorpay Integration",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vercel Deployment",
+    ].map((tech) => (
+      <span
+        key={tech}
+        className="px-4 py-2 text-sm rounded-full bg-amber-500/10 text-amber-300 border border-amber-400/20 hover:bg-amber-500/20 transition-colors"
+      >
+        {tech}
+      </span>
+    ))}
+  </motion.div>
+</div>
     </>
   );
 }
