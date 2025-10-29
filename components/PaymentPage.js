@@ -42,7 +42,7 @@ const PaymentPage = ({ username }) => {
             getData();
             router.push(`/${username}`, { scroll: false });
         }
-    }, [])
+    }, [searchparmas])
 
     const pay = async (amount) => {
         let a = await initiate({ amount, to_username: username, paymentform })
