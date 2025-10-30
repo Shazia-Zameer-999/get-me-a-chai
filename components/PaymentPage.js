@@ -55,8 +55,7 @@ const PaymentPage = ({ username }) => {
             "description": "Test Transaction",
             "image": currentUser.profile || "/chai.gif",
             "order_id": orderId,
-            // "callback_url": `${process.env.NEXT_PUBLIC_URL}/api/razorpay`,
-            "callback_url": 'https://get-me-a-chai-gilt-pi.vercel.app/api/razorpay',
+            "callback_url": `${process.env.NEXT_PUBLIC_URL}/api/razorpay`,
             "prefill": {
                 "name": paymentform.name,
                 "email": "test@example.com",
