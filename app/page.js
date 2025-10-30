@@ -154,7 +154,7 @@ export default function Home() {
       </div>
 
       <div className="text-white container mx-auto py-24 px-6 flex flex-col items-center text-center">
-  {/* Title */}
+
   <motion.h2
     className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-amber-400 to-pink-400 bg-clip-text text-transparent"
     initial={{ opacity: 0, y: 30 }}
@@ -165,7 +165,7 @@ export default function Home() {
     Learn More About Get Me a Chai ☕
   </motion.h2>
 
-  {/* Project Info Card */}
+  
   <motion.div
     className="w-full max-w-3xl bg-gradient-to-b from-[#141e33] to-[#0e172b] rounded-2xl border border-amber-500/20 p-8 shadow-2xl shadow-amber-900/30"
     initial={{ opacity: 0, scale: 0.95 }}
