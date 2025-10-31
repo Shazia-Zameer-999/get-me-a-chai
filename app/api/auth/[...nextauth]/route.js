@@ -38,7 +38,7 @@ export const authOptions = {
                     email: user.email,
                     username: user.email.split('@')[0],
                     name: user.name,
-                    profile: user.image,
+                    // profile: user.image,
 
                 });
             }
