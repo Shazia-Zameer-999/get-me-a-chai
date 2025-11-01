@@ -27,12 +27,12 @@ const PaymentPage = ({ username }) => {
         getData()
     }, [])
 
-    const handleChange = (e) => {
-        setPaymentform({ ...paymentform, [e.target.name]: e.target.value })
-    }
     const [paymentform, setPaymentform] = useState({
         name: "", message: "", amount: ""
     });
+    const handleChange = (e) => {
+        setPaymentform({ ...paymentform, [e.target.name]: e.target.value })
+    }
     const searchparmas = useSearchParams();
     useEffect(() => {
         if (searchparmas.get("paymentdone") == "true") {

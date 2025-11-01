@@ -32,9 +32,6 @@ export const initiate = async ({ amount, to_username, paymentform }) => {
     })
 
     return x;
-
-    f
-
 }
 
 
