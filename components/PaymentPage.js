@@ -120,7 +120,7 @@ const PaymentPage = ({ username }) => {
                             <h1 className='text-2xl md:text-3xl font-bold'>@{username}</h1>
                             <p className="text-slate-300 text-sm md:text-base mt-1">{currentUser.bio || `Support @${username}, one chai at a time.`}</p>
                             <div className="mt-4 px-4 py-2 bg-slate-800/50 rounded-lg text-sm md:text-base">
-                                <span className="font-bold text-purple-400">{totalSupporters}</span> Supporters · <span className="font-bold text-purple-400">₹{totalAmount / 100}</span> Raised
+                                <span className="font-bold text-purple-400">{totalSupporters}</span> Supporters · <span className="font-bold text-purple-400">₹{totalAmount}</span> Raised
                             </div>
                         </motion.div>
                     </div>
