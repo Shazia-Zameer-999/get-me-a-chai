@@ -137,7 +137,7 @@ const PaymentPage = ({ username }) => {
                                     <motion.li key={p._id} className='flex gap-3 items-start text-base p-3 bg-slate-800/50 rounded-lg' variants={itemVariants}>
                                         <img className='w-8 h-8 rounded-full' src="/user.gif" alt="User" />
                                         <div className="flex-1">
-                                            <span><span className='font-bold text-purple-300'>{p.name}</span> donated <span className='font-bold text-lg'>₹{p.amount / 100}</span></span>
+                                            <span><span className='font-bold text-purple-300'>{p.name}</span> donated <span className='font-bold text-lg'>₹{p.amount}</span></span>
                                             <p className="text-sm text-slate-400 mt-1 flex items-center gap-2">
                                                 <FiMessageSquare /> "{p.message}"
                                             </p>
