@@ -12,7 +12,7 @@
     "framer-motion": "^12.23.16",
     "icons": "^1.0.0",
     "mongoose": "^8.18.1",
-    "next": "15.5.3",
+    "next": "15.5.9",
     "next-auth": "^4.24.11",
     "razorpay": "^2.9.6",
     "react": "^19.1.0",
