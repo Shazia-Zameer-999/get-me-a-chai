@@ -6,7 +6,11 @@ import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params }) {
     await connectDB();
-    const user = await User.findOne({ username: params.username });
+
+    const { username } = await Promise.resolve(params);
+    const user = await User.findOne({ username });
+    console.log("username= ", username)
+    console.log("user= ", user)
 
     if (!user) {
         return {
@@ -21,7 +25,8 @@ export async function generateMetadata({ params }) {
 }
 const ProfilePage = async ({ params }) => {
     await connectDB();
-    const user = await User.findOne({ username: params.username }).lean();
+    const { username } = await Promise.resolve(params);
+    const user = await User.findOne({ username }).lean();
 
 
     if (!user) {
@@ -31,7 +36,7 @@ const ProfilePage = async ({ params }) => {
     return (
         <>
 
-            <PaymentPage username={params.username} />
+            <PaymentPage username={username} />
         </>
     )
 }
