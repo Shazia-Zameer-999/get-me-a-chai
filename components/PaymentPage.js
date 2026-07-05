@@ -45,25 +45,40 @@ const PaymentPage = ({ username }) => {
     }, [searchparmas])
 
     const pay = async (amount) => {
-        let a = await initiate({ amount, to_username: username, paymentform })
-        let orderId = a.id;
-        var options = {
-            "key": currentUser.razorpayid,
-            "amount": amount,
-            "currency": "INR",
-            "name": "Get Me A Chai",
-            "description": "Test Transaction",
-            "image": currentUser.profile || "/chai.gif",
-            "order_id": orderId,
-            "callback_url": `${process.env.NEXT_PUBLIC_URL}/api/razorpay`,
-            "prefill": {
-                "name": paymentform.name,
-                "email": "test@example.com",
-            },
-            "theme": { "color": "#8B5CF6" }
-        };
-        const rzp1 = new window.Razorpay(options);
-        rzp1.open();
+        if (!currentUser?.razorpayid || !currentUser?.razorpaysecret) {
+            toast.error('This creator has not configured payment settings yet.');
+            return;
+        }
+
+        try {
+            let a = await initiate({ amount, to_username: username, paymentform })
+            if (!a?.success) {
+                toast.error(a?.message || 'Payment could not be started. Please try again.');
+                return;
+            }
+
+            let orderId = a.order.id;
+            const callbackUrl = `${window.location.origin}/api/razorpay`;
+            var options = {
+                "key": currentUser.razorpayid,
+                "amount": amount,
+                "currency": "INR",
+                "name": "Get Me A Chai",
+                "description": "Test Transaction",
+                "image": currentUser.profile || "/chai.gif",
+                "order_id": orderId,
+                "callback_url": callbackUrl,
+                "prefill": {
+                    "name": paymentform.name,
+                    "email": "test@example.com",
+                },
+                "theme": { "color": "#8B5CF6" }
+            };
+            const rzp1 = new window.Razorpay(options);
+            rzp1.open();
+        } catch (error) {
+            toast.error(error?.message || 'Payment could not be started. Please try again.');
+        }
     }
     const isDisabled2 = !paymentform.name || !paymentform.message
     const isDisabled = !paymentform.name || !paymentform.message || !paymentform.amount;

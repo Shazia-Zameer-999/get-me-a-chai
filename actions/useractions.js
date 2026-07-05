@@ -9,8 +9,12 @@ export const initiate = async ({ amount, to_username, paymentform }) => {
     await connectDB();
 
     let user = await User.findOne({ username: to_username });
-    const secret = user.razorpaysecret;
-    let key = user.razorpayid;
+    if (!user?.razorpayid || !user?.razorpaysecret) {
+        return { success: false, message: "Creator payment settings are incomplete" };
+    }
+
+    const secret = user.razorpaysecret.trim();
+    let key = user.razorpayid.trim();
     var instance = new Razorpay({
         key_id: key,
         key_secret: secret,
@@ -20,7 +24,22 @@ export const initiate = async ({ amount, to_username, paymentform }) => {
         amount: Number.parseInt(amount),
         currency: "INR",
     }
-    let x = await instance.orders.create(options)
+    let x;
+    try {
+        x = await instance.orders.create(options)
+    } catch (error) {
+        if (error?.statusCode === 401 || error?.error?.code === "BAD_AUTH") {
+            return {
+                success: false,
+                message: "Razorpay authentication failed. Check the creator's key id and secret.",
+            };
+        }
+
+        return {
+            success: false,
+            message: error?.error?.description || error?.message || "Failed to create Razorpay order",
+        };
+    }
 
 
     await Payment.create({
@@ -31,15 +50,15 @@ export const initiate = async ({ amount, to_username, paymentform }) => {
         message: paymentform.message
     })
 
-    return x;
+    return { success: true, order: x };
 }
 
 
 export const fetchuser = async (username) => {
     await connectDB();
-    let u = await User.findOne({ username: username }).lean(); 
+    let u = await User.findOne({ username: username }).lean();
 
-    if (!u) return null; 
+    if (!u) return null;
 
     const user = {
         ...u,

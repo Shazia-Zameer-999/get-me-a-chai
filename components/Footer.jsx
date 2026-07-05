@@ -72,7 +72,7 @@ const Footer = () => {
                             rel="noopener noreferrer"
                             className="font-semibold text-blue-400 hover:text-blue-300 transition-colors"
                         >
-                            DatenDiva
+                            Shazia Zameer
                         </a>.
                     </p>
                 </div>
